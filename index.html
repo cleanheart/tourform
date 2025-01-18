@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Search Form</title>
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- jQuery and jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="all.js"></script>
+</head>
+<body>
+<div class="go-trip-search-form">
+    <div class=" go-trip-tabs">
+        <button type="button" class="go-trip-tab-button active" data-trip-type="oneWay">One way</button>
+        <button type="button" class="go-trip-tab-button" data-trip-type="returnTrip">Return</button>
+        <button type="button" class="go-trip-tab-button" id="go-trip-tour-tab">Tour</button>
+        <a href="#" id="counter-btn" >
+            <div class="icon-wrapper">
+                <span class="iconn"><i class="fa-solid fa-user-group"></i></span>
+                <span class="text">2</span>
+            </div>
+            <div class="icon-wrapper">
+                <span class="iconn"><i class="fa-solid fa-suitcase"></i> <i class="fa-solid fa-suitcase-rolling"></i></span>
+                <span class="text">2</span>
+            </div>
+            <i class="fa-solid fa-angle-down last-icon"></i>
+        </a>
+    </div>
+    <form action="your_action_url_here" method="GET" id="navTab-form">
+        <input type="hidden" name="trip_type" id="trip-type" value="oneWay">
+        <div class="go-trip-form-row">
+            <div class="column column-1st">
+                <div class="icon">
+                    <i class="fa-solid fa-circle-dot"></i>
+                </div>
+                <input type="text" id="go-trip-from" name="go_trip_from" placeholder="From">
+            </div>
+            <div class="column">
+                <div class="icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <input type="text" id="go-trip-to" name="go_trip_to" placeholder="To">
+            </div>
+            <div class="column">
+                <div class="icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+                <input type="text" id="go-trip-departureDate" name="go_trip_departure_date" placeholder="Departure">
+                <input type="hidden" name="go_trip_departure_time" id="go-trip-departureTime-hidden">
+            </div>
+            <div class="column my-column ">
+                <div class="go-trip-extra-option">
+                    <a href="#" id="counter-btn" >
+                        <div class="icon-wrapper">
+                            <span class="iconn"><i class="fa-solid fa-user-group"></i></span>
+                            <span class="text">2</span>
+                        </div>
+                        <div class="icon-wrapper">
+                            <span class="iconn"><i class="fa-solid fa-suitcase"></i> <i class="fa-solid fa-suitcase-rolling"></i></span>
+                            <span class="text">2</span>
+                        </div>
+                        <i class="fa-solid fa-angle-down last-icon"></i>
+                    </a>
+                    <div class="passenger-counters">
+                        <div class="left">
+                            <div class="form-row">
+                                <div class="row-title-wrapper">
+                                    <span class="title">Adults</span>
+                                    <span class="sub-title">(Age 12+)</span>
+                                </div>
+                                <div class="counter">
+                                    <button type="button" class="counter-button" id="adults-decrement">-</button>
+                                    <span id="adults-count">2</span>
+                                    <button type="button" class="counter-button" id="adults-increment">+</button>
+                                </div>
+                                <input type="hidden" name="adults_count" id="adults-count-hidden" value="2">
+                            </div>
+                            <div class="form-row">
+                                <div class="row-title-wrapper">
+                                    <span class="title">Kids</span>
+                                    <span class="sub-title">Age 0-12</span>
+                                </div>
+                                <div class="counter">
+                                    <button type="button" class="counter-button" id="kids-decrement">-</button>
+                                    <span id="kids-count">0</span>
+                                    <button type="button" class="counter-button" id="kids-increment">+</button>
+                                </div>
+                                <input type="hidden" name="kids_count" id="kids-count-hidden" value="0">
+                            </div>
+                            <div class="passenger-left-bottom">
+                                <h6>Each passenger is allowed</h6>
+                                <div class="icon-box-wrapper icon-box-wrapper-1">
+                                    <div class="icon-box">
+                                        <div class="iconnn"><i class="fa-solid fa-suitcase"></i> </div>
+                                        <span class="title">One checked bag</span>
+                                    </div>
+                                    <div class="text">29 x 21 x 11 inch</div>
+                                </div>
+                                <div class="icon-box-wrapper">
+                                    <div class="icon-box">
+                                        <div class="iconnn"><i class="fa-solid fa-suitcase-rolling"></i> </div>
+                                        <span class="title">One carry-on bag</span>
+                                    </div>
+                                    <div class="text">12 x 10 x 8 inch</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <h5 >Need more space?</h5>
+                            <p class="description">You can add extra sets of bags at no extra cost, but you might need a bigger vehicle.</p>
+                            <div class="form-row right-form-row">
+                                <div class="row-title-wrapper">
+                                    <span class="title">Extra sets of bags</span>
+                                    <span class="sub-title">One checked bag + one carry on</span>
+                                </div>
+                                <div class="counter">
+                                    <button type="button" class="counter-button" id="bags-decrement">-</button>
+                                    <span id="bags-count">0</span>
+                                    <button type="button" class="counter-button" id="bags-increment">+</button>
+                                </div>
+                                <input type="hidden" name="bags_count" id="bags-count-hidden" value="0">
+                            </div> 
+                        </div>
+                       
+                        <!--
+                        -->
+                    </div>
+                    <!-- <div class="luggage-info">
+                        <p>Each passenger is allowed:</p>
+                        <ul>
+                            <li>One checked bag (29 x 21 x 11 inch)</li>
+                            <li>One carry-on bag (12 x 10 x 8 inch)</li>
+                        </ul>
+                        <p>Need more space? You can add extra sets of bags at no extra cost, but you might need a bigger vehicle.</p>
+                    </div> -->
+                </div>
+                <button type="submit" id="go-trip-find-ride">Find ride</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
