@@ -40,6 +40,58 @@ body {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
 }
+.go-trip-tabs-2{
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(221, 225, 230);
+    position: relative;
+}
+.go-trip-btn-text{
+    display: none;
+    position: absolute;
+    left: 0;
+    z-index:3;
+    background: #fff;
+    width: 100%;
+    margin: 0 10px;
+    /* border:1px solid  rgb(221, 225, 230); */
+    top:25px;
+
+}
+.go-trip-btn-text.active{
+    display: inline-block;
+}
+.go-trip-btn-text li{
+    list-style-type: none;
+}
+.go-trip-btn-text li a{
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    padding:10px 0px;
+}
+.go-trip-tabs-2 .left{
+    border-right: 1px solid rgb(221, 225, 230);
+    width: 80%;
+    padding: 0.75rem;
+}
+.go-trip-tabs-2 .left button{
+    width: 100%;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    border: none;
+    background: transparent;
+    gap: 8px;
+}
+.go-trip-tabs-2 .left button .last-icon{
+    margin-left: auto;
+}
+.go-trip-tabs-2 .right{
+    width:161px;
+}
 
 .column {
     display: flex;
@@ -87,18 +139,15 @@ body {
 }
 
 .column-1st {
-    /* max-width: 300px; */
-    /* padding: 1rem 3.25rem 1rem 2.5rem; */
     font-weight: 500;
     font-size: 1rem;
     height: 100%;
     background: transparent;
-    border: none;
     border-radius: 666px 0.5rem 0.5rem 666px;
     transition: all 0.3s;
 }
 
-form input {
+#navTab-form input {
     border: none;
     transition: all 0.3s ease;
     width: 100%;
@@ -107,9 +156,12 @@ form input {
 
 }
 
-form input:focus {
+#navTab-form input:focus {
     outline: none;
     background: #fafafa;
+}
+#navTab-form input::placeholder{
+    font-weight: 600;
 }
 
 .go-trip-extra-option {
@@ -117,7 +169,7 @@ form input:focus {
     position: relative;
 }
 
-.go-trip-extra-option a {
+#counter-btn{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -127,24 +179,25 @@ form input:focus {
     padding: 5px 10px;
 }
 
-.go-trip-extra-option a .last-icon {
+
+#counter-btn  .last-icon {
     font-size: 18px;
     color: rgb(23, 29, 33);
 
 }
 
-.go-trip-extra-option a .icon-wrapper {
+#counter-btn  a .icon-wrapper {
     display: flex;
     align-items: center;
     gap: 7px;
 }
 
-.go-trip-extra-option a .icon-wrapper .iconn {
+#counter-btn .icon-wrapper .iconn {
     font-size: 18px;
     color: rgb(23, 29, 33);
 }
 
-.go-trip-extra-option a .icon-wrapper .text {
+#counter-btn .icon-wrapper .text {
     font-size: 14px;
     color: rgb(23, 29, 33);
 }
@@ -324,23 +377,54 @@ form input:focus {
     background: #0653D9;
 }
 
-/******responsiev**********/
+/******responsive**********/
 @media (max-width:992px){
     .go-trip-search-form{
         background: #fff;
-        overflow: hidden
+        overflow: hidden;
+        border-radius:0.75rem;
+        padding-right: 10px;
+    }
+    .go-trip-tabs{
+        display: none;
     }
     #navTab-form{
-        border-radius: 0
+        border-radius: 0;
+        margin:0;
+        box-shadow: none;
     }
     .go-trip-form-row{
         flex-direction: column;
     }
     .go-trip-form-row .column{
-        width: 100%
+        width: 100%;
+        border-bottom:1px solid rgb(242, 244, 248);
+        border-right: none;
+    }
+    .calender-column{
+        border: none !important;
     }
     .my-column{
         display: flex;
         flex-direction:column;
+    }
+    .go-trip-extra-option-2{
+        display: none;
+    }
+    #go-trip-find-ride{
+        width: 100%;
+        /* margin: 0px 10px; */
+    }
+    .go-trip-tabs-2{
+        display: flex;
+    }
+.column-1st {
+    border-radius: none;
+}
+
+}
+@media(max-width:575px){
+    .go-trip-tabs-2 .right {
+        width: 230px;
     }
 }

@@ -16,18 +16,32 @@
     <div class=" go-trip-tabs">
         <button type="button" class="go-trip-tab-button active" data-trip-type="oneWay">One way</button>
         <button type="button" class="go-trip-tab-button" data-trip-type="returnTrip">Return</button>
-        <button type="button" class="go-trip-tab-button" id="go-trip-tour-tab">Tour</button>
-        <a href="#" id="counter-btn" >
-            <div class="icon-wrapper">
-                <span class="iconn"><i class="fa-solid fa-user-group"></i></span>
-                <span class="text">2</span>
-            </div>
-            <div class="icon-wrapper">
-                <span class="iconn"><i class="fa-solid fa-suitcase"></i> <i class="fa-solid fa-suitcase-rolling"></i></span>
-                <span class="text">2</span>
-            </div>
-            <i class="fa-solid fa-angle-down last-icon"></i>
-        </a>
+    </div>
+    <div class="go-trip-tabs-2">
+        <ul class="go-trip-btn-text">
+            <li> <a href="#"> One way</a> </li>
+            <li> <a href="#"> Return</a> </li>
+        </ul>
+        <div class="left">
+            <button class="trip-tabs-btn">
+                <i class="fa-solid fa-arrow-right" ></i>
+                One way
+                <i class="fa-solid fa-angle-down last-icon"></i>
+            </button>
+        </div>
+        <div class="right">
+            <a href="#" id="counter-btn" class="counter-btn-2" >
+                <div class="icon-wrapper">
+                    <span class="iconn"><i class="fa-solid fa-user-group"></i></span>
+                    <span class="text">2</span>
+                </div>
+                <div class="icon-wrapper">
+                    <span class="iconn"><i class="fa-solid fa-suitcase"></i> <i class="fa-solid fa-suitcase-rolling"></i></span>
+                    <span class="text">2</span>
+                </div>
+                <i class="fa-solid fa-angle-down last-icon"></i>
+            </a>
+        </div>
     </div>
     <form action="your_action_url_here" method="GET" id="navTab-form">
         <input type="hidden" name="trip_type" id="trip-type" value="oneWay">
@@ -44,7 +58,7 @@
                 </div>
                 <input type="text" id="go-trip-to" name="go_trip_to" placeholder="To">
             </div>
-            <div class="column">
+            <div class="column calender-column">
                 <div class="icon">
                     <i class="fa-solid fa-calendar-days"></i>
                 </div>
@@ -52,7 +66,7 @@
                 <input type="hidden" name="go_trip_departure_time" id="go-trip-departureTime-hidden">
             </div>
             <div class="column my-column ">
-                <div class="go-trip-extra-option">
+                <div class="go-trip-extra-option go-trip-extra-option-2">
                     <a href="#" id="counter-btn" >
                         <div class="icon-wrapper">
                             <span class="iconn"><i class="fa-solid fa-user-group"></i></span>

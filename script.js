@@ -131,7 +131,7 @@
     initializeAutocomplete('go-trip-from', 'from-lat', 'from-lng', 'from-address');
     initializeAutocomplete('go-trip-to', 'to-lat', 'to-lng', 'to-address');
 
-   
+
 
 })(jQuery);
 
