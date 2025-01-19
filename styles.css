@@ -4,7 +4,8 @@ body {
 
 .go-trip-search-form {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 300px 0 300px;
 }
 
 .go-trip-tabs {
@@ -40,44 +41,51 @@ body {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
 }
-.go-trip-tabs-2{
+
+.go-trip-tabs-2 {
     display: none;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgb(221, 225, 230);
     position: relative;
 }
-.go-trip-btn-text{
+
+.go-trip-btn-text {
     display: none;
     position: absolute;
     left: 0;
-    z-index:3;
+    z-index: 3;
     background: #fff;
     width: 100%;
     margin: 0 10px;
     /* border:1px solid  rgb(221, 225, 230); */
-    top:25px;
+    top: 25px;
 
 }
-.go-trip-btn-text.active{
+
+.go-trip-btn-text.active {
     display: inline-block;
 }
-.go-trip-btn-text li{
+
+.go-trip-btn-text li {
     list-style-type: none;
 }
-.go-trip-btn-text li a{
+
+.go-trip-btn-text li a {
     display: inline-block;
     font-weight: 700;
     text-decoration: none;
     color: #000;
-    padding:10px 0px;
+    padding: 10px 0px;
 }
-.go-trip-tabs-2 .left{
+
+.go-trip-tabs-2 .left {
     border-right: 1px solid rgb(221, 225, 230);
     width: 80%;
     padding: 0.75rem;
 }
-.go-trip-tabs-2 .left button{
+
+.go-trip-tabs-2 .left button {
     width: 100%;
     font-weight: 600;
     display: flex;
@@ -86,17 +94,123 @@ body {
     background: transparent;
     gap: 8px;
 }
-.go-trip-tabs-2 .left button .last-icon{
+
+.go-trip-tabs-2 .left button .last-icon {
     margin-left: auto;
 }
-.go-trip-tabs-2 .right{
-    width:161px;
+
+.go-trip-tabs-2 .right {
+    width: 161px;
 }
 
 .column {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.location-wrapper {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 400px;
+    border-radius: 12px;
+    background: #fff;
+    padding: 10px;
+    height: 350px;
+    overflow-Y: scroll;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.location-wrapper.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.location-wrapper ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 10px;
+    transition: 0.3s;
+    border-bottom: 1px solid rgba(135, 141, 150, 0.219);
+    cursor: pointer;
+}
+
+.location-wrapper ul:hover {
+    background: #F2F4F8;
+    border-radius: 6px;
+    border-bottom: 1px solid #F2F4F8;
+}
+
+.location-wrapper ul li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.location-wrapper ul li img {
+    border-radius: 50%;
+}
+
+.location-wrapper ul li .title-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.location-wrapper .title {
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #010409;
+}
+
+.location-wrapper .sub-title {
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 15px;
+    color: rgb(135, 141, 150);
+
+}
+
+.location-wrapper ul li .title-2 {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 50px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    border: 2px solid #146AFF;
+    color: #146AFF;
+}
+
+.location-wrapper .description {
+    font-size: 16px;
+    color: #010409;
+    padding-left: 15px;
+}
+
+.location-wrapper .description a {
+    text-decoration: none;
+    color: #146AFF;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+
+.location-wrapper .description a:hover {
+    color: #146aff98;
 }
 
 .go-trip-form-row {
@@ -121,7 +235,6 @@ body {
     background: rgb(255, 255, 255);
     padding: 0.25rem;
     border-radius: 666px;
-    overflow: hidden;
     box-shadow: rgba(18, 22, 25, 0.12) 0px 2px 8px 0px;
     width: 100%;
     margin-top: 50px;
@@ -136,6 +249,7 @@ body {
 
 .my-column {
     width: 27%;
+    border: none;
 }
 
 .column-1st {
@@ -160,7 +274,8 @@ body {
     outline: none;
     background: #fafafa;
 }
-#navTab-form input::placeholder{
+
+#navTab-form input::placeholder {
     font-weight: 600;
 }
 
@@ -169,7 +284,7 @@ body {
     position: relative;
 }
 
-#counter-btn{
+#counter-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -180,13 +295,13 @@ body {
 }
 
 
-#counter-btn  .last-icon {
+#counter-btn .last-icon {
     font-size: 18px;
     color: rgb(23, 29, 33);
 
 }
 
-#counter-btn  a .icon-wrapper {
+#counter-btn a .icon-wrapper {
     display: flex;
     align-items: center;
     gap: 7px;
@@ -203,11 +318,11 @@ body {
 }
 
 .passenger-counters {
-    opacity: 0;
-    visibility: hidden;
     position: absolute;
-    top: -20px;
-    right: 0px;
+    bottom: 50px;
+    right: -166px;
+    left: auto;
+    top: auto;
     display: flex;
     justify-content: space-between;
     width: 680px;
@@ -215,10 +330,11 @@ body {
     border-radius: 12px;
     box-shadow: rgba(18, 22, 25, 0.12) 0px 4px 16px 0px;
     background-color: rgb(255, 255, 255);
+    opacity: 0;
+    visibility: hidden;
 }
 
 .passenger-counters.active {
-    top: -40px;
     opacity: 1;
     visibility: visible;
 }
@@ -377,80 +493,277 @@ body {
     background: #0653D9;
 }
 
+.responsive-title-wrapper {
+    display: none;
+}
+
 /******responsive**********/
-@media (max-width:992px){
-    .go-trip-search-form{
-        background: #fff;
-        overflow: hidden;
-        border-radius:0.75rem;
-        padding-right: 10px;
-    }
-    .go-trip-tabs{
+@media (max-width:992px) {
+    .location-wrapper .description {
         display: none;
     }
-    #navTab-form{
+
+    .location-wrapper {
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        left: 0;
+        z-index: 5;
+        height: 100vh;
         border-radius: 0;
-        margin:0;
-        box-shadow: none;
     }
-    .go-trip-form-row{
+
+    .go-trip-search-form {
+        background: #fff;
+        border-radius: 0.75rem;
+        padding: 20px 20px;
+        width: 80%;
+    }
+
+    .go-trip-tabs {
+        display: none;
+    }
+
+    #navTab-form {
+        border-radius: 0.75rem;
+        margin: 0;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .go-trip-form-row {
         flex-direction: column;
     }
-    .go-trip-form-row .column{
+
+    .go-trip-form-row .column {
         width: 100%;
-        border-bottom:1px solid rgb(242, 244, 248);
+        border-bottom: 1px solid rgb(242, 244, 248);
         border-right: none;
     }
-    .calender-column{
+
+    .calender-column {
         border: none !important;
     }
-    .my-column{
+
+    .my-column {
         display: flex;
-        flex-direction:column;
+        flex-direction: column;
     }
-    .go-trip-extra-option-2{
+
+
+    .go-trip-extra-option-2 #counter-btn {
         display: none;
     }
-    #go-trip-find-ride{
+
+    #go-trip-find-ride {
         width: 100%;
         /* margin: 0px 10px; */
     }
-    .go-trip-tabs-2{
+
+    .go-trip-tabs-2 {
         display: flex;
+        position: relative;
+        transition: all 350ms ease;
     }
-.column-1st {
-    border-radius: none;
-}
+
+    .passenger-counters-try {
+        z-index: 7;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0%;
+        overflow-x: scroll;
+        transform: translateX(0%);
+        flex-direction: column;
+        /* padding: 25px 40px; */
+        border-radius: 0;
+
+    }
+
+    .passenger-counters {
+        padding: 0;
+    }
+
+    .passenger-counters .form-row {
+        padding: 0 20px;
+    }
+
+    .passenger-left-bottom {
+        padding: 0 20px;
+        margin-top: 20px;
+    }
+
+    .go-trip-tabs-2 .left {
+        position: relative;
+    }
+
+    .trip-tabs-dwopdown {
+        position: absolute;
+        top: calc(100% + 2px);
+        left: 0;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: 1px solid #141313;
+        background: #fff;
+        z-index: 5;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .trip-tabs-dwopdown.active{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .trip-tabs-dwopdown span {
+        padding: 0.5rem 3px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 0.875rem;
+        letter-spacing: 0.25px;
+        background-color:transparent;
+        color: rgb(0, 0, 0);
+        transition: 0.3s;
+
+
+    }
+    .trip-tabs-dwopdown .active{
+        background-color:rgba(21, 115, 209, 0.767);
+        color: rgb(255, 255, 255);
+
+    }
+    .trip-tabs-dwopdown:hover{
+        background-color:rgb(229, 242, 255);
+        color: rgb(255, 255, 255);
+
+    }
+
+    .go-trip-tabs-2 .passenger-counters .right {
+        margin-top: 20px;
+    }
+
+    .passenger-counters .right h5 {
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+    .passenger-counters .right .description {
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+    .go-trip-tabs-2 .passenger-counters .left {
+        margin: 0;
+        width: 100%;
+        padding: 0;
+        border-right: none;
+
+    }
+
+    .responsive-title-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    .responsive-title-wrapper h4 {
+        font-weight: 600;
+        font-size: 1.75rem;
+        line-height: 1.1;
+        letter-spacing: -0.25px;
+        text-transform: capitalize;
+        margin: 0;
+    }
+
+    .responsive-title-wrapper span {
+        color: #000000;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgb(242, 244, 248);
+        padding: 5px;
+    }
+
+    .passenger-left-bottom .icon-box-wrapper {
+        border-bottom: 2px solid #DDE1E6;
+    }
+
+    .go-trip-tabs-2 .passenger-counters .right {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+
+    .column-1st {
+        border-radius: none;
+    }
 
 }
-@media(max-width:575px){
+
+@media(max-width:575px) {
     .go-trip-tabs-2 .right {
-        width: 230px;
+        width: 50%;
+    }
+
+    .go-trip-search-form {
+        width: 100%;
+        padding: 15px;
+        margin: auto;
     }
 }
+
 /*********** calender *************/
-#ui-datepicker-div{
+#ui-datepicker-div {
     padding: 20px;
 }
-#go-trip-departureTime{
+
+#go-trip-departureTime {
     margin-top: 15px;
 }
+
 .ui-datepicker .ui-datepicker-header {
     background: transparent;
     border: none;
 }
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
     border: none;
 
 }
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
-    border: 1px solid #fff  !important;
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+    border: 1px solid #fff !important;
     background: #fff !important;
 }
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
     font-weight: 600 !important;
     color: #171D21 !important;
 }
+
 /* .time-options{
     border-top: 1px solid rgb(221, 225, 230);
     padding-top: 20px !important;
